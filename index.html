@@ -8,7 +8,7 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>🎬PALING MANTAP</title>
+<title>🎬PALING BARU</title>
 
 <meta name="description"
       content="Tonton video terbaru dan video lainnya.">
@@ -19,7 +19,7 @@
 ========================= -->
 
 <meta property="og:title"
-      content="🎬KUMPULAN TRENDING">
+      content="🎬PALING BARU">
 
 <meta property="og:description"
       content="Tonton video terbaru di sini.">
@@ -41,7 +41,7 @@
 
 
 <!-- =========================
-     TWITTER CARD
+     TWITTER
 ========================= -->
 
 <meta name="twitter:card"
@@ -71,7 +71,9 @@ var hs = document.createElement('script');
 hs.type = 'text/javascript';
 hs.async = true;
 hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+(document.getElementsByTagName('head')[0] ||
+ document.getElementsByTagName('body')[0])
+.appendChild(hs);
 })();
 </script>
 
@@ -83,11 +85,11 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <script src="https://pl31742207.profitableratecpmnetwork.com/fe/1f/46/fe1f460d4528e145b3ec7bc27f62a598.js"></script>
 
 
-<!-- =========================
-     STYLE
-========================= -->
-
 <style>
+
+/* =========================
+   BASIC
+========================= */
 
 * {
     box-sizing: border-box;
@@ -114,8 +116,8 @@ body {
 .container {
     width: 100%;
     max-width: 900px;
-    margin: 0 auto;
-    padding: 12px;
+    margin: auto;
+    padding: 10px;
 }
 
 
@@ -127,7 +129,7 @@ body {
     text-align: center;
     font-size: 20px;
     font-weight: 700;
-    margin: 8px 0 14px;
+    margin: 8px 0 12px;
 }
 
 
@@ -136,11 +138,17 @@ body {
 ========================= */
 
 .video-wrapper {
+
     position: relative;
+
     width: 100%;
+
     background: #000;
+
     overflow: hidden;
-    border-radius: 10px;
+
+    border-radius: 9px;
+
 }
 
 
@@ -149,25 +157,87 @@ body {
 ========================= */
 
 #videoPlayer {
+
     display: block;
+
     width: 100%;
+
     height: auto;
+
     max-height: 80vh;
+
     background: #000;
+
     object-fit: contain;
+
     transition:
-        filter 0.25s ease,
-        transform 0.25s ease;
+        filter .25s ease,
+        transform .25s ease;
+
 }
 
 
 /* =========================
-   LOCKED VIDEO
+   BLUR SAAT TERKUNCI
 ========================= */
 
 .video-wrapper.locked #videoPlayer {
-    filter: blur(12px) brightness(0.35) !important;
+
+    filter:
+        blur(12px)
+        brightness(.35) !important;
+
     transform: scale(1.03);
+
+}
+
+
+/* =========================
+   CUSTOM FULLSCREEN
+========================= */
+
+.fullscreen-button {
+
+    position: absolute;
+
+    right: 8px;
+
+    bottom: 8px;
+
+    width: 38px;
+
+    height: 30px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    background: rgba(0,0,0,.65);
+
+    color: #fff;
+
+    font-size: 18px;
+
+    line-height: 30px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    z-index: 50;
+
+    opacity: .9;
+
+}
+
+.fullscreen-button:active {
+
+    transform: scale(.94);
+
 }
 
 
@@ -176,56 +246,60 @@ body {
 ========================= */
 
 #continueOverlay {
+
     position: absolute;
+
     inset: 0;
 
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     width: 100%;
+
     height: 100%;
 
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0,0,0,.42);
 
-    z-index: 999999;
+    z-index: 1000;
 
-    pointer-events: none;
-}
-
-
-/* Saat popup aktif */
-
-#continueOverlay.show {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
 }
 
 
 /* =========================
-   POPUP BOX
+   OVERLAY AKTIF
+========================= */
+
+#continueOverlay.show {
+
+    display: flex !important;
+
+}
+
+
+/* =========================
+   POPUP
 ========================= */
 
 .continue-box {
+
     width: min(88%, 360px);
 
     padding: 22px 18px;
 
     text-align: center;
 
-    background: rgba(20, 20, 20, 0.96);
+    background: rgba(15,15,15,.97);
 
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,.15);
 
     border-radius: 14px;
 
     box-shadow:
-        0 10px 35px rgba(0,0,0,0.65);
+        0 10px 40px rgba(0,0,0,.7);
 
-    z-index: 1000000;
 }
 
 
@@ -234,21 +308,30 @@ body {
 ========================= */
 
 .continue-title {
+
     font-size: 21px;
+
     font-weight: 700;
+
     margin-bottom: 9px;
+
 }
 
 
 /* =========================
-   POPUP TEXT
+   POPUP DESCRIPTION
 ========================= */
 
 .continue-text {
+
     font-size: 14px;
+
     line-height: 1.5;
+
     color: #ccc;
+
     margin-bottom: 17px;
+
 }
 
 
@@ -257,67 +340,131 @@ body {
 ========================= */
 
 #continueBtn {
-    appearance: none;
 
     border: 0;
 
-    padding: 12px 22px;
+    padding: 12px 23px;
 
     border-radius: 9px;
 
     background: #fff;
+
     color: #000;
 
     font-size: 15px;
+
     font-weight: 700;
 
     cursor: pointer;
 
-    transition:
-        transform 0.15s ease,
-        opacity 0.15s ease;
-}
-
-#continueBtn:active {
-    transform: scale(0.96);
-}
-
-#continueBtn:hover {
-    opacity: 0.9;
 }
 
 
 /* =========================
-   COLLECTION BUTTON
+   COLLECTION
 ========================= */
 
 .collection {
-    margin-top: 15px;
+
+    margin-top: 14px;
+
 }
 
 .collection button {
+
     width: 100%;
 
-    border: 0;
+    padding: 14px;
+
+    border: 1px solid #292929;
 
     border-radius: 10px;
-
-    padding: 14px;
 
     background: #151515;
 
     color: #fff;
 
     font-size: 15px;
+
     font-weight: 700;
 
     cursor: pointer;
 
-    border: 1px solid #2b2b2b;
 }
 
-.collection button:active {
-    transform: scale(0.99);
+
+/* =========================
+   FULLSCREEN WRAPPER
+========================= */
+
+.video-wrapper:fullscreen {
+
+    width: 100vw;
+
+    height: 100vh;
+
+    max-width: none;
+
+    border-radius: 0;
+
+    background: #000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* WEBKIT FULLSCREEN */
+
+.video-wrapper:-webkit-full-screen {
+
+    width: 100vw;
+
+    height: 100vh;
+
+    max-width: none;
+
+    border-radius: 0;
+
+    background: #000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* VIDEO SAAT FULLSCREEN */
+
+.video-wrapper:fullscreen #videoPlayer {
+
+    width: 100%;
+
+    height: 100%;
+
+    max-height: 100vh;
+
+    object-fit: contain;
+
+}
+
+.video-wrapper:-webkit-full-screen #videoPlayer {
+
+    width: 100%;
+
+    height: 100%;
+
+    max-height: 100vh;
+
+    object-fit: contain;
+
 }
 
 
@@ -328,29 +475,51 @@ body {
 @media (max-width: 600px) {
 
     .container {
-        padding: 8px;
+
+        padding: 7px;
+
     }
 
     .title {
+
         font-size: 18px;
-        margin-bottom: 10px;
+
     }
 
     .video-wrapper {
+
         border-radius: 7px;
+
+    }
+
+    .fullscreen-button {
+
+        width: 36px;
+
+        height: 29px;
+
+        line-height: 29px;
+
+        font-size: 17px;
+
+        right: 7px;
+
+        bottom: 7px;
+
     }
 
     .continue-box {
+
         width: 86%;
+
         padding: 20px 15px;
+
     }
 
     .continue-title {
-        font-size: 19px;
-    }
 
-    .continue-text {
-        font-size: 13px;
+        font-size: 19px;
+
     }
 
 }
@@ -365,17 +534,20 @@ body {
 
 <div class="container">
 
+
     <div class="title">
         🎬 KUMPULAN TRENDING
     </div>
 
 
     <!-- =========================
-         VIDEO
+         VIDEO WRAPPER
     ========================= -->
 
-    <div id="videoWrapper"
-         class="video-wrapper">
+    <div
+        id="videoWrapper"
+        class="video-wrapper">
+
 
         <video
             id="videoPlayer"
@@ -384,7 +556,7 @@ body {
             preload="metadata">
 
             <source
-                src="https://cdn2.videy.co/VBwE9pC11.mp4"
+                src="https://cdn2.videy.co/RJQe8PPJ1.mp4"
                 type="video/mp4">
 
             Browser Anda tidak mendukung video HTML5.
@@ -393,7 +565,22 @@ body {
 
 
         <!-- =========================
-             CONTINUE OVERLAY
+             FULLSCREEN ICON
+        ========================= -->
+
+        <button
+            id="fullscreenBtn"
+            class="fullscreen-button"
+            type="button"
+            aria-label="Fullscreen">
+
+            ⛶
+
+        </button>
+
+
+        <!-- =========================
+             CONTINUE POPUP
         ========================= -->
 
         <div id="continueOverlay">
@@ -408,14 +595,18 @@ body {
                     Klik tombol di bawah untuk melanjutkan video.
                 </div>
 
-                <button id="continueBtn"
-                        type="button">
+                <button
+                    id="continueBtn"
+                    type="button">
+
                     ▶️ Lanjutkan
+
                 </button>
 
             </div>
 
         </div>
+
 
     </div>
 
@@ -436,12 +627,9 @@ body {
 
     </div>
 
+
 </div>
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
@@ -451,23 +639,38 @@ body {
 
 
     /* =========================
-       ELEMENTS
+       ELEMENT
     ========================= */
 
     const video =
-        document.getElementById("videoPlayer");
+        document.getElementById(
+            "videoPlayer"
+        );
 
-    const videoWrapper =
-        document.getElementById("videoWrapper");
+    const wrapper =
+        document.getElementById(
+            "videoWrapper"
+        );
 
     const overlay =
-        document.getElementById("continueOverlay");
+        document.getElementById(
+            "continueOverlay"
+        );
 
     const continueBtn =
-        document.getElementById("continueBtn");
+        document.getElementById(
+            "continueBtn"
+        );
+
+    const fullscreenBtn =
+        document.getElementById(
+            "fullscreenBtn"
+        );
 
     const collectionBtn =
-        document.getElementById("collectionBtn");
+        document.getElementById(
+            "collectionBtn"
+        );
 
 
     /* =========================
@@ -499,7 +702,7 @@ body {
 
 
     /* =========================
-       OPEN DIRECT LINK
+       DIRECT LINK
     ========================= */
 
     function openDirectLink() {
@@ -514,75 +717,151 @@ body {
 
 
     /* =========================
-       SHOW OVERLAY
+       FULLSCREEN
     ========================= */
 
-    function showContinueOverlay() {
+    async function enterFullscreen() {
+
+        try {
+
+            if (
+                !document.fullscreenElement &&
+                wrapper.requestFullscreen
+            ) {
+
+                await wrapper.requestFullscreen();
+
+                return;
+
+            }
+
+
+            if (
+                !document.fullscreenElement &&
+                wrapper.webkitRequestFullscreen
+            ) {
+
+                wrapper.webkitRequestFullscreen();
+
+                return;
+
+            }
+
+
+            if (document.fullscreenElement) {
+
+                if (
+                    document.exitFullscreen
+                ) {
+
+                    await document.exitFullscreen();
+
+                }
+
+            }
+
+        }
+
+        catch (error) {
+
+            console.log(
+                "Fullscreen error:",
+                error
+            );
+
+        }
+
+    }
+
+
+    fullscreenBtn.addEventListener(
+        "click",
+        enterFullscreen
+    );
+
+
+    /* =========================
+       SHOW POPUP
+    ========================= */
+
+    function showOverlay() {
 
         triggerActive = true;
 
 
-        /* Pause video */
-
         video.pause();
 
 
-        /* Blur video */
+        wrapper.classList.add(
+            "locked"
+        );
+
 
         video.style.filter =
-            "blur(12px) brightness(0.35)";
+            "blur(12px) brightness(.35)";
 
         video.style.transform =
             "scale(1.03)";
 
 
-        /* Lock wrapper */
+        overlay.classList.add(
+            "show"
+        );
 
-        videoWrapper.classList.add("locked");
+
+        overlay.style.display =
+            "flex";
 
 
-        /* Force overlay visible */
+        overlay.style.pointerEvents =
+            "auto";
 
-        overlay.classList.add("show");
 
-        overlay.style.display = "flex";
+        overlay.style.visibility =
+            "visible";
 
-        overlay.style.visibility = "visible";
 
-        overlay.style.opacity = "1";
-
-        overlay.style.pointerEvents = "auto";
+        overlay.style.opacity =
+            "1";
 
     }
 
 
     /* =========================
-       HIDE OVERLAY
+       HIDE POPUP
     ========================= */
 
-    function hideContinueOverlay() {
+    function hideOverlay() {
 
-        overlay.classList.remove("show");
-
-        overlay.style.display = "none";
-
-        overlay.style.visibility = "hidden";
-
-        overlay.style.opacity = "0";
-
-        overlay.style.pointerEvents = "none";
+        overlay.classList.remove(
+            "show"
+        );
 
 
-        /* Remove blur */
+        overlay.style.display =
+            "none";
+
+
+        overlay.style.pointerEvents =
+            "none";
+
+
+        overlay.style.visibility =
+            "hidden";
+
+
+        overlay.style.opacity =
+            "0";
+
+
+        wrapper.classList.remove(
+            "locked"
+        );
+
 
         video.style.filter = "";
 
         video.style.transform = "";
-
-
-        /* Unlock */
-
-        videoWrapper.classList.remove("locked");
 
     }
 
@@ -595,13 +874,20 @@ body {
         "timeupdate",
         function () {
 
-            if (triggerCount >= maxTriggers) {
+            if (
+                triggerCount >=
+                maxTriggers
+            ) {
+
                 return;
+
             }
 
 
             if (triggerActive) {
+
                 return;
+
             }
 
 
@@ -625,7 +911,7 @@ body {
                 triggerInterval
             ) {
 
-                showContinueOverlay();
+                showOverlay();
 
             }
 
@@ -634,7 +920,7 @@ body {
 
 
     /* =========================
-       CONTINUE BUTTON
+       CONTINUE
     ========================= */
 
     continueBtn.addEventListener(
@@ -642,26 +928,20 @@ body {
         function () {
 
             if (!triggerActive) {
+
                 return;
+
             }
 
-
-            /* Count trigger */
 
             triggerCount++;
 
 
-            /* Open Direct Link */
-
             openDirectLink();
 
 
-            /* Hide popup */
+            hideOverlay();
 
-            hideContinueOverlay();
-
-
-            /* Reset timer */
 
             triggerStartTime =
                 video.currentTime;
@@ -670,22 +950,9 @@ body {
             triggerActive = false;
 
 
-            /* Play video */
-
-            const playPromise =
-                video.play();
-
-
-            if (
-                playPromise &&
-                typeof playPromise.catch === "function"
-            ) {
-
-                playPromise.catch(
-                    function () {}
-                );
-
-            }
+            video.play().catch(
+                function () {}
+            );
 
         }
     );
@@ -700,28 +967,6 @@ body {
         function () {
 
             openDirectLink();
-
-        }
-    );
-
-
-    /* =========================
-       RESET WATCH TIMER
-       WHEN VIDEO STARTS
-    ========================= */
-
-    video.addEventListener(
-        "play",
-        function () {
-
-            if (
-                triggerStartTime === null
-            ) {
-
-                triggerStartTime =
-                    video.currentTime;
-
-            }
 
         }
     );
