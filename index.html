@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>🎬PALING MANTAP</title>
+
+<meta name="description"
+      content="Tonton video terbaru dan video lainnya.">
+
+
+<!-- =========================
+     OPEN GRAPH
+========================= -->
+
+<meta property="og:title"
+      content="🎬KUMPULAN TRENDING">
+
+<meta property="og:description"
+      content="Tonton video terbaru di sini.">
+
+<meta property="og:image"
+      content="https://jpcdn.it/img/082acaa85384971b1e5347a3a4267ffd.jpg">
+
+<meta property="og:image:secure_url"
+      content="https://jpcdn.it/img/082acaa85384971b1e5347a3a4267ffd.jpg">
+
+<meta property="og:image:width"
+      content="1200">
+
+<meta property="og:image:height"
+      content="630">
+
+<meta property="og:type"
+      content="website">
+
+
+<!-- =========================
+     TWITTER CARD
+========================= -->
+
+<meta name="twitter:card"
+      content="summary_large_image">
+
+<meta name="twitter:title"
+      content="🎬KUMPULAN TRENDING">
+
+<meta name="twitter:description"
+      content="Tonton video terbaru di sini.">
+
+<meta name="twitter:image"
+      content="https://jpcdn.it/img/082acaa85384971b1e5347a3a4267ffd.jpg">
+
+
+<!-- =========================
+     HISTATS
+========================= -->
+
+<script type="text/javascript">
+var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4971236,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script');
+hs.type = 'text/javascript';
+hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();
+</script>
+
+
+<!-- =========================
+     SOCIAL BAR
+========================= -->
+
+<script src="https://pl31742207.profitableratecpmnetwork.com/fe/1f/46/fe1f460d4528e145b3ec7bc27f62a598.js"></script>
+
+
+<!-- =========================
+     STYLE
+========================= -->
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 12px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 8px 0 14px;
+}
+
+
+/* =========================
+   VIDEO WRAPPER
+========================= */
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    background: #000;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+#videoPlayer {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    background: #000;
+    object-fit: contain;
+    transition:
+        filter 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================
+   LOCKED VIDEO
+========================= */
+
+.video-wrapper.locked #videoPlayer {
+    filter: blur(12px) brightness(0.35) !important;
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   CONTINUE OVERLAY
+========================= */
+
+#continueOverlay {
+    position: absolute;
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    z-index: 999999;
+
+    pointer-events: none;
+}
+
+
+/* Saat popup aktif */
+
+#continueOverlay.show {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+/* =========================
+   POPUP BOX
+========================= */
+
+.continue-box {
+    width: min(88%, 360px);
+
+    padding: 22px 18px;
+
+    text-align: center;
+
+    background: rgba(20, 20, 20, 0.96);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.65);
+
+    z-index: 1000000;
+}
+
+
+/* =========================
+   POPUP TITLE
+========================= */
+
+.continue-title {
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+
+/* =========================
+   POPUP TEXT
+========================= */
+
+.continue-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ccc;
+    margin-bottom: 17px;
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+#continueBtn {
+    appearance: none;
+
+    border: 0;
+
+    padding: 12px 22px;
+
+    border-radius: 9px;
+
+    background: #fff;
+    color: #000;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+#continueBtn:active {
+    transform: scale(0.96);
+}
+
+#continueBtn:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   COLLECTION BUTTON
+========================= */
+
+.collection {
+    margin-top: 15px;
+}
+
+.collection button {
+    width: 100%;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    background: #151515;
+
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    border: 1px solid #2b2b2b;
+}
+
+.collection button:active {
+    transform: scale(0.99);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 8px;
+    }
+
+    .title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .video-wrapper {
+        border-radius: 7px;
+    }
+
+    .continue-box {
+        width: 86%;
+        padding: 20px 15px;
+    }
+
+    .continue-title {
+        font-size: 19px;
+    }
+
+    .continue-text {
+        font-size: 13px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+    <div class="title">
+        🎬 KUMPULAN TRENDING
+    </div>
+
+
+    <!-- =========================
+         VIDEO
+    ========================= -->
+
+    <div id="videoWrapper"
+         class="video-wrapper">
+
+        <video
+            id="videoPlayer"
+            controls
+            playsinline
+            preload="metadata">
+
+            <source
+                src="https://cdn2.videy.co/VBwE9pC11.mp4"
+                type="video/mp4">
+
+            Browser Anda tidak mendukung video HTML5.
+
+        </video>
+
+
+        <!-- =========================
+             CONTINUE OVERLAY
+        ========================= -->
+
+        <div id="continueOverlay">
+
+            <div class="continue-box">
+
+                <div class="continue-title">
+                    ▶️ Lanjutkan Video
+                </div>
+
+                <div class="continue-text">
+                    Klik tombol di bawah untuk melanjutkan video.
+                </div>
+
+                <button id="continueBtn"
+                        type="button">
+                    ▶️ Lanjutkan
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         KUMPULAN VIDEO
+    ========================= -->
+
+    <div class="collection">
+
+        <button
+            id="collectionBtn"
+            type="button">
+
+            🎬 KUMPULAN VIDEO
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+(function () {
+
+    "use strict";
+
+
+    /* =========================
+       ELEMENTS
+    ========================= */
+
+    const video =
+        document.getElementById("videoPlayer");
+
+    const videoWrapper =
+        document.getElementById("videoWrapper");
+
+    const overlay =
+        document.getElementById("continueOverlay");
+
+    const continueBtn =
+        document.getElementById("continueBtn");
+
+    const collectionBtn =
+        document.getElementById("collectionBtn");
+
+
+    /* =========================
+       DIRECT LINK
+    ========================= */
+
+    const directLink =
+        "https://www.profitableratecpmnetwork.com/jqam5pwjs?key=759fb4084cc926a5cff7602a430c42af";
+
+
+    /* =========================
+       SETTINGS
+    ========================= */
+
+    const triggerInterval = 20;
+
+    const maxTriggers = 2;
+
+
+    /* =========================
+       VARIABLES
+    ========================= */
+
+    let triggerCount = 0;
+
+    let triggerActive = false;
+
+    let triggerStartTime = null;
+
+
+    /* =========================
+       OPEN DIRECT LINK
+    ========================= */
+
+    function openDirectLink() {
+
+        window.open(
+            directLink,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+    }
+
+
+    /* =========================
+       SHOW OVERLAY
+    ========================= */
+
+    function showContinueOverlay() {
+
+        triggerActive = true;
+
+
+        /* Pause video */
+
+        video.pause();
+
+
+        /* Blur video */
+
+        video.style.filter =
+            "blur(12px) brightness(0.35)";
+
+        video.style.transform =
+            "scale(1.03)";
+
+
+        /* Lock wrapper */
+
+        videoWrapper.classList.add("locked");
+
+
+        /* Force overlay visible */
+
+        overlay.classList.add("show");
+
+        overlay.style.display = "flex";
+
+        overlay.style.visibility = "visible";
+
+        overlay.style.opacity = "1";
+
+        overlay.style.pointerEvents = "auto";
+
+    }
+
+
+    /* =========================
+       HIDE OVERLAY
+    ========================= */
+
+    function hideContinueOverlay() {
+
+        overlay.classList.remove("show");
+
+        overlay.style.display = "none";
+
+        overlay.style.visibility = "hidden";
+
+        overlay.style.opacity = "0";
+
+        overlay.style.pointerEvents = "none";
+
+
+        /* Remove blur */
+
+        video.style.filter = "";
+
+        video.style.transform = "";
+
+
+        /* Unlock */
+
+        videoWrapper.classList.remove("locked");
+
+    }
+
+
+    /* =========================
+       WATCH TIME
+    ========================= */
+
+    video.addEventListener(
+        "timeupdate",
+        function () {
+
+            if (triggerCount >= maxTriggers) {
+                return;
+            }
+
+
+            if (triggerActive) {
+                return;
+            }
+
+
+            if (
+                triggerStartTime === null
+            ) {
+
+                triggerStartTime =
+                    video.currentTime;
+
+            }
+
+
+            const watchedTime =
+                video.currentTime -
+                triggerStartTime;
+
+
+            if (
+                watchedTime >=
+                triggerInterval
+            ) {
+
+                showContinueOverlay();
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       CONTINUE BUTTON
+    ========================= */
+
+    continueBtn.addEventListener(
+        "click",
+        function () {
+
+            if (!triggerActive) {
+                return;
+            }
+
+
+            /* Count trigger */
+
+            triggerCount++;
+
+
+            /* Open Direct Link */
+
+            openDirectLink();
+
+
+            /* Hide popup */
+
+            hideContinueOverlay();
+
+
+            /* Reset timer */
+
+            triggerStartTime =
+                video.currentTime;
+
+
+            triggerActive = false;
+
+
+            /* Play video */
+
+            const playPromise =
+                video.play();
+
+
+            if (
+                playPromise &&
+                typeof playPromise.catch === "function"
+            ) {
+
+                playPromise.catch(
+                    function () {}
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       KUMPULAN VIDEO
+    ========================= */
+
+    collectionBtn.addEventListener(
+        "click",
+        function () {
+
+            openDirectLink();
+
+        }
+    );
+
+
+    /* =========================
+       RESET WATCH TIMER
+       WHEN VIDEO STARTS
+    ========================= */
+
+    video.addEventListener(
+        "play",
+        function () {
+
+            if (
+                triggerStartTime === null
+            ) {
+
+                triggerStartTime =
+                    video.currentTime;
+
+            }
+
+        }
+    );
+
+
+})();
+
+</script>
+
+
+</body>
+
+</html>
